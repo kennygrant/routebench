@@ -1,6 +1,6 @@
 // To control which routers are benchmarked, see /routers/load.go
 // For benchmarks:
-// go test -bench=Bench -timeout=2m -benchtime 2s -benchmem
+// go test -bench=Bench -timeout=2m -benchtime 1s -benchmem
 package main
 
 import (
