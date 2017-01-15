@@ -62,6 +62,44 @@ func BenchmarkStatic(b *testing.B) {
 
 }
 
+// BenchTestStatic tests the routes in routes/static_routes.go
+func BenchmarkCMS(b *testing.B) {
+
+	// Add the muxes we want to consider
+	routers.Load()
+
+	// Call setup on the routers
+	routers.Setup(routes.CMS, routers.NullHandler)
+
+	// Set up a recorder (unused)
+	w := httptest.NewRecorder()
+
+	// Set up a list of requests for these routes
+	// Set up a fake request and recorder
+	var requests []*http.Request
+	for _, route := range routes.Static {
+		r := httptest.NewRequest(route.Method, route.Path, nil)
+		requests = append(requests, r)
+	}
+
+	// Now handle routes and benchmark
+	for _, router := range routers.All() {
+		// This Run will not return until the parallel tests finish.
+
+		b.Run(router.Name(), func(b *testing.B) {
+			b.ReportAllocs()
+			b.ResetTimer()
+			for i := 0; i < b.N; i++ {
+				for _, r := range requests {
+					router.Serve(w, r)
+				}
+			}
+		})
+	}
+	println("")
+
+}
+
 // BenchmarkGithub tests the routes in routes/github_routes.go
 func BenchmarkGithub(b *testing.B) {
 

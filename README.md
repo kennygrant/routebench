@@ -8,6 +8,8 @@ The routers have very different characteristics, and the slower ones typically d
 
 Finally, a time of 1860451 ns per route say is only 1.860451ms - this is a perfectly respectable time for handling a route and handing off to the handler. While it is desirable to have faster routing, a difference between 0.01ms and 0.1ms is probably not important for your app when it does real work, and anything below 1ms I would consider acceptable for most applications.
 
+TODO: Add a short report for each router on the supported features, so that the benchmarks also function as a simple comparison between routers for different uses.
+
 To use perform:
 
 ```Go 
