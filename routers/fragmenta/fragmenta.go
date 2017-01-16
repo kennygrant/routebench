@@ -30,7 +30,7 @@ func (r *Router) Setup() error {
 	// this could distort results. I think most of the table tests would not be affected though.
 	// static tests would reflect real-world results when hitting the same URLs repeatedly.
 	// This trades off some memory for speed by caching mappings of URLS -> Handlers.
-	// in a real app, many identical hits for the same URL will be recived (esp. / , but also
+	// in a real app, many identical hits for the same URL will be received (esp. / , but also
 	// say /users/1 etc)
 	// mux.MaxCacheEntries = 0
 
