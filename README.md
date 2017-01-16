@@ -1,4 +1,4 @@
-# RouteBench 
+# RouteBench  [![GoDoc](https://godoc.org/github.com/kennygrant/routebench?status.svg)](https://godoc.org/github.com/kennygrant/routebench) [![Go Report Card](https://goreportcard.com/badge/github.com/kennygrant/routebench)](https://goreportcard.com/report/github.com/kennygrant/routebench) [![CircleCI](https://circleci.com/gh/kennygrant/routebench.svg?style=svg)](https://circleci.com/gh/kennygrant/routebench)
 
 Routebench is a set of packages for benchmarking, similar to the tests from httprouter, but making it a little easier to add/remove routers.
 
