@@ -101,6 +101,8 @@ ok  	github.com/kennygrant/routebench	38.060s
 
 Not all routers are shown in these stats, just the default enabled ones. Not all are enabled because that would make go get pull down every routing package in the universe (as the httprouter tests do at present). Enable the ones your'e interested in and test those specifically to see numbers or send a pull request if you don't see the one you want to test. 
 
+You can also see the results on [!CircleCI](https://circleci.com/gh/kennygrant/routebench/3#build-timing/containers/0) - I should set this up to do a build with all routers automatically at some point. 
+
 To add a new router to benchmark, add a new adapter under routebench/routers, add to load.go (commented out by default please) and send a pull request. The adapter packages avoid pulling every router at once and let you easily choose which ones to benchmark. 
 
 I may try to look into automatically updating results somewhere with a CI setup. 
